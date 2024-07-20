@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sonicinpeli.css">
+    <title>Sonicin villapaitapeli</title>
+</head>
+<body>
+
+    <div id="gameDiv" width ="700" height="525">
+
+        <img id="paita" src="villapaita.png" width="700" height="525">
+
+        <img id="image" src="startscreen.png" usemap="#startMap" width="700" height="525">
+
+        <map name="startMap">
+            <area id="button1" shape="rect" coords="400,220,641,323" href="#" onclick="changeValues1()">
+            <area id="button2" shape="rect" coords="0,0,0,0" href="#" onclick="changeValues2()">
+        </map>
+
+    </div>
+
+    <footer>
+        <h1>Sonicin villapaitapeli</h1>
+        <p>Kusinen HTML kooditesti inspired by Sakarin villapaitapeli.</p>
+        <p>Meikämauku <a href="https://www.tumblr.com/blog/platinumspook">Tumpussa</a></p>
+        <p>&copy A.E.W. Teeriaho (2024)</p>
+    </footer>
+
+    <script src="sonicinpeli.js"></script>
+</body>
+</html>

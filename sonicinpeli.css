@@ -1,0 +1,36 @@
+*{
+    background-color: black;
+    color: #99c5ff;
+    text-align: center;
+}
+h1{
+    visibility: hidden;
+    font-size: 1px;
+}
+footer{
+    font-family: "consolas", monospace;
+    font-size: 15px;
+}
+#gameDiv{
+    position: relative;
+    top: 0px;
+}
+@keyframes villapaita{
+    0% {left: -700px;}
+    100% {left: 275px}
+}
+#paita{
+    visibility: hidden;
+    background-color: transparent;
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    animation-name: villapaita;
+    animation-duration: 3s;
+}
+#image{
+    position: relative;
+    z-index: 1;
+    top: 0px;
+    border: 5px solid;
+}
