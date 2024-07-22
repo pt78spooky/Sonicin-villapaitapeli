@@ -1,28 +1,35 @@
-var gameState = "start"
+const canvas = document.querySelector("#gameCanvas");
+const ctx = canvas.getContext("2d");
+var video = document.getElementById("video");
+
+var gameState = "start";
+
+video.addEventListener("play", () => {
+    function step() {
+      ctx.drawImage(video, -116.5, 0, 933, canvas.height);
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
 
 function changeValues1(){
-    console.log("click1!");
-    if(gameState == "lose"){
-        document.getElementById("image").src = "startscreen.png";
-        document.getElementById("button1").coords = "400,220,641,323";
-        document.getElementById("button2").coords = "0,0,0,0";
-        gameState = "start";
-    }
-    else if(gameState == "win"){
+    if(gameState == "lose" || gameState == "win"){
         document.getElementById("image").src = "startscreen.png";
         document.getElementById("button1").coords = "400,220,641,323";
         document.getElementById("button2").coords = "0,0,0,0";
         gameState = "start";
     }
     else if(gameState == "play"){
-        console.log("HALOO?");
         document.getElementById("image").src = "losescreen.png";
         document.getElementById("button1").coords = "326,336,685,419";
         document.getElementById("button2").coords = "0,0,0,0";
         gameState = "lose";
     }
     else if(gameState == "animation"){
-        
+        document.getElementById("image").src = "winscreen.png";
+        document.getElementById("button1").coords = "382,370,682,439";
+        document.getElementById("button2").coords = "0,0,0,0";
+        gameState = "win";
     }
     else if(gameState == "start"){
         document.getElementById("image").src = "playscreen.png";
@@ -32,11 +39,16 @@ function changeValues1(){
     }
 }
 function changeValues2(){
-    console.log("click2!");
     if(gameState == "play"){
-        document.getElementById("image").src = "winscreen.png";
-        document.getElementById("button1").coords = "382,370,682,439";
+        document.getElementById("image").src = "";
+        document.getElementById("button1").coords = "0,0,0,0";
         document.getElementById("button2").coords = "0,0,0,0";
-        gameState = "win";
+        document.getElementById("gameCanvas").style.visibility = "visible";
+        video.play();
+        video.onended = function (e) {
+            gameState = "animation";
+            changeValues1();
+            document.getElementById("gameCanvas").style.visibility = "hidden";
+        }
     }
 }

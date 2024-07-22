@@ -10,10 +10,8 @@
     
     <!-- https://youtu.be/LyM1UGD8sqM?si=zwu9lQaidzAuJ6aT -->
     <!-- :PPP -->
-
-    <div id="gameDiv" width ="700" height="525">
-
-        <img id="paita" src="villapaita.png" width="700" height="525">
+    <div id="gameDiv">
+        <canvas id="gameCanvas" width ="700" height="525"> </canvas>
 
         <img id="image" src="startscreen.png" usemap="#startMap" width="700" height="525">
 
@@ -21,8 +19,9 @@
             <area id="button1" shape="rect" coords="400,220,641,323" href="#" onclick="changeValues1()">
             <area id="button2" shape="rect" coords="0,0,0,0" href="#" onclick="changeValues2()">
         </map>
-
     </div>
+
+    <video id="video" src="villapaita2.mp4"></video>
 
     <footer>
         <h1>Sonicin villapaitapeli</h1>
