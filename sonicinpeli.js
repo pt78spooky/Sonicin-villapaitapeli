@@ -43,12 +43,12 @@ function changeValues2(){
         document.getElementById("image").src = "";
         document.getElementById("button1").coords = "0,0,0,0";
         document.getElementById("button2").coords = "0,0,0,0";
+        gameState = "animation";
         document.getElementById("gameCanvas").style.visibility = "visible";
         video.play();
         video.onended = function (e) {
-            gameState = "animation";
-            changeValues1();
             document.getElementById("gameCanvas").style.visibility = "hidden";
+            changeValues1();
         }
     }
 }
