@@ -4,6 +4,9 @@ var video = document.getElementById("video");
 
 var gameState = "start";
 
+ctx.fillStyle = "white";
+ctx. fillRect(0,0,700,525);
+
 video.addEventListener("play", () => {
     function step() {
       ctx.drawImage(video, -116.5, 0, 933, canvas.height);
@@ -49,6 +52,8 @@ function changeValues2(){
         video.onended = function (e) {
             document.getElementById("gameCanvas").style.visibility = "hidden";
             changeValues1();
+            ctx.fillStyle = "white";
+            ctx. fillRect(0,0,700,525);
         }
     }
 }
